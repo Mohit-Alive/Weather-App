@@ -26,13 +26,7 @@ async function fetchWeather() {
         const sunriseTime = new Date(sunriseTimestamp * 1000).toLocaleTimeString();
         const sunsetTime = new Date(sunsetTimestamp * 1000).toLocaleTimeString();
 
-        let pollutionData = "";
-        if (data.hasOwnProperty("main") && data.main.hasOwnProperty("aqi")) {
-          const aqi = data.main.aqi;
-          pollutionData = `<p>AQI: ${aqi}</p>`;
-        } else {
-          pollutionData = "<p>AQI data not available</p>";
-        }
+       
 
   
         document.getElementById("weatherData").innerHTML = `
@@ -45,7 +39,7 @@ async function fetchWeather() {
           <p>🌏 Country: ${country}</p>
           <p>🌄 Sunrise: ${sunriseTime}</p>
           <p>🌇 Sunset: ${sunsetTime}</p>
-          ${pollutionData}
+          
 
         `;
       }
